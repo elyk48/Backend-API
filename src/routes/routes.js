@@ -15,4 +15,12 @@ BackendRouter
 );
 
 
+BackendRouter
+.route('/API')
+.get(
+   (req, res) => {
+      res.json({ status: 'ok' });
+    }
+);
+
 export default BackendRouter;

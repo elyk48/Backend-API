@@ -39,7 +39,7 @@ export async function httpcreateEnvironment(req, res) {
 
   // Clone the Git repository
   const git = simpleGit();
-  await git.clone("https://github.com/elyk48/TestRepo.git", repoDirectory).then(async () => {
+  await git.clone(process.env.GITTESTREPO, repoDirectory).then(async () => {
  
     //Create a new Git branch
     const branchName = `env-${environmentName}-${scenario}-${Date.now()}-${uniqueIdentifier}`;
